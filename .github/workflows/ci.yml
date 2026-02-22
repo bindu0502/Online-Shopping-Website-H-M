@@ -64,7 +64,7 @@ jobs:
     
     - name: Build and start services
       run: |
-        docker-compose up -d --build
+        docker compose up -d --build
         sleep 30
     
     - name: Check service health
@@ -81,12 +81,12 @@ jobs:
     - name: Show logs on failure
       if: failure()
       run: |
-        docker-compose logs backend
-        docker-compose logs frontend
+        docker compose logs backend
+        docker compose logs frontend
     
     - name: Cleanup
       if: always()
-      run: docker-compose down -v
+      run: docker compose down -v
 
   build-images:
     runs-on: ubuntu-latest
