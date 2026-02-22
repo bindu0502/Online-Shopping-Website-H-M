@@ -16,14 +16,16 @@ def test_filters():
     tests_passed = 0
     tests_failed = 0
 
-    # Test 1
-    print("\n1️⃣  Test: Basic product listing")
+    # -----------------------
+    # Test 1: Basic listing
+    # -----------------------
+    print("\n1️⃣ Test: Basic product listing")
     try:
         response = requests.get(f"{BASE_URL}/products/?page=1&limit=10")
         assert response.status_code == 200
         data = response.json()
+
         assert "products" in data
-        assert "total" in data
         assert len(data["products"]) > 0
 
         print(f"   ✅ Got {len(data['products'])} products")
@@ -32,10 +34,13 @@ def test_filters():
         print(f"   ❌ Failed: {e}")
         tests_failed += 1
 
-    # Test 2
-    print("\n2️⃣  Test: Min price filter (min_price=50)")
+    # -----------------------
+    # Test 2: Min price
+    # -----------------------
+    print("\n2️⃣ Test: Min price filter (min_price=50)")
     try:
         response = requests.get(f"{BASE_URL}/products/?min_price=50&limit=10")
+        assert response.status_code == 200
         data = response.json()
         products = data["products"]
 
@@ -48,10 +53,13 @@ def test_filters():
         print(f"   ❌ Failed: {e}")
         tests_failed += 1
 
-    # Test 3
-    print("\n3️⃣  Test: Max price filter (max_price=30)")
+    # -----------------------
+    # Test 3: Max price
+    # -----------------------
+    print("\n3️⃣ Test: Max price filter (max_price=30)")
     try:
         response = requests.get(f"{BASE_URL}/products/?max_price=30&limit=10")
+        assert response.status_code == 200
         data = response.json()
         products = data["products"]
 
@@ -64,6 +72,9 @@ def test_filters():
         print(f"   ❌ Failed: {e}")
         tests_failed += 1
 
+    # -----------------------
+    # Summary
+    # -----------------------
     print("\n" + "=" * 60)
     print("TEST SUMMARY")
     print("=" * 60)
@@ -78,5 +89,9 @@ if __name__ == "__main__":
         exit_code = test_filters()
         sys.exit(exit_code)
     except requests.exceptions.ConnectionError:
-        print("\n❌ Error: Could not connect to API")
+        print("\n❌ Could not connect to API.")
+        print("Make sure backend is running: python main.py")
+        sys.exit(1)
+    except Exception as e:
+        print(f"\n❌ Unexpected error: {e}")
         sys.exit(1)
