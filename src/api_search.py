@@ -228,7 +228,6 @@ def ai_search(
 
     return query_builder.limit(limit).all()
 
-
 # --------------------------------------------------
 # Search Endpoint
 # --------------------------------------------------
