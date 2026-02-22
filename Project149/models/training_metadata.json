@@ -1,0 +1,45 @@
+{
+  "timestamp": "2025-12-02T09:31:10.919688",
+  "model_path": "Project149\\models\\lgbm_v1.pkl",
+  "training": {
+    "best_iteration": 1,
+    "best_score": 1.0,
+    "num_features": 13,
+    "params": {
+      "objective": "binary",
+      "boosting_type": "gbdt",
+      "metric": "auc",
+      "learning_rate": 0.03,
+      "num_leaves": 128,
+      "max_depth": 8,
+      "min_child_samples": 20,
+      "subsample": 0.8,
+      "colsample_bytree": 0.7,
+      "reg_alpha": 0.0,
+      "reg_lambda": 0.0,
+      "seed": 42,
+      "verbose": -1
+    }
+  },
+  "evaluation": {
+    "train_auc": 1.0,
+    "val_auc": 1.0,
+    "mapk_results": {
+      "10": {
+        "map": 1.0,
+        "recall": 1.0,
+        "n_users": 2
+      },
+      "20": {
+        "map": 1.0,
+        "recall": 1.0,
+        "n_users": 2
+      },
+      "30": {
+        "map": 1.0,
+        "recall": 1.0,
+        "n_users": 2
+      }
+    }
+  }
+}

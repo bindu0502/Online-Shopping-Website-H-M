@@ -1,0 +1,63 @@
+═══════════════════════════════════════════════════════════════
+    📋 PUSH TO GITHUB - SIMPLE CHECKLIST
+═══════════════════════════════════════════════════════════════
+
+Follow these steps in order:
+
+□ STEP 1: Open Terminal/Command Prompt
+   Location: C:\Users\polis\OneDrive\Desktop\Project149_Main
+
+□ STEP 2: Initialize Git
+   Command: git init
+
+□ STEP 3: Configure Git (First time only)
+   Command: git config --global user.name "Your Name"
+   Command: git config --global user.email "your.email@example.com"
+
+□ STEP 4: Add All Files
+   Command: git add .
+
+□ STEP 5: Create First Commit
+   Command: git commit -m "Initial commit: E-commerce platform"
+
+□ STEP 6: Create GitHub Repository
+   1. Go to: https://github.com
+   2. Click: "+" icon → "New repository"
+   3. Name: project149-ecommerce
+   4. Visibility: Public or Private
+   5. Click: "Create repository"
+   6. DON'T initialize with README
+
+□ STEP 7: Connect to GitHub
+   Command: git remote add origin https://github.com/YOUR_USERNAME/project149-ecommerce.git
+   (Replace YOUR_USERNAME with your GitHub username!)
+
+□ STEP 8: Rename Branch to Main
+   Command: git branch -M main
+
+□ STEP 9: Push to GitHub
+   Command: git push -u origin main
+   
+   If asked for password:
+   - Use Personal Access Token (PAT), NOT your password
+   - Create PAT: GitHub → Settings → Developer settings → Personal access tokens
+
+□ STEP 10: Verify on GitHub
+   Go to: https://github.com/YOUR_USERNAME/project149-ecommerce
+   Refresh page - you should see all your files!
+
+═══════════════════════════════════════════════════════════════
+
+✅ DONE! Your project is now on GitHub!
+
+Next time you make changes:
+1. git add .
+2. git commit -m "Your message"
+3. git push
+
+═══════════════════════════════════════════════════════════════
+
+Need detailed help? Read: GITHUB_PUSH_GUIDE.md
+Quick commands? Read: GITHUB_QUICK_COMMANDS.md
+
+═══════════════════════════════════════════════════════════════
