@@ -52,7 +52,7 @@ def test_filters():
             assert product["price"] >= 50, f"Product {product['article_id']} has price {product['price']} < 50"
         
         print(f"   ✅ All {len(products)} products have price >= $50")
-        print(f"   Sample prices: {[f'${p['price']:.2f}' for p in products[:3]]}")
+        print("   Sample prices:", [f"${p['price']:.2f}" for p in products[:3]])
         tests_passed += 1
     except Exception as e:
         print(f"   ❌ Failed: {e}")
